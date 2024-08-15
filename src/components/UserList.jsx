@@ -1,17 +1,18 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { userAction } from "../store/usersSlice";
+import { fetchUsers } from "../queryFn/users/users-query";
 
 export default function UserList() {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users.users);
-  console.log(users);
+  const { users: allUsers, status } = useSelector((state) => state.users);
+
   const [newUser, setNewUser] = useState({ name: "", email: "" });
   const [editingUser, setEditingUser] = useState(null);
 
   useEffect(() => {
-    dispatch(userAction.fetchUsers());
+    dispatch(fetchUsers());
   }, [dispatch]);
 
   const handleAddUser = () => {
