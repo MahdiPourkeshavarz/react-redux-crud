@@ -6,9 +6,12 @@ import CreateUser from "../pages/CreateUser";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
     errorElement: <NotFoundPage />,
     children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
       {
         path: "/create",
         element: <CreateUser />,
