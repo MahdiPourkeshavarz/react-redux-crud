@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { httpsRequest } from "../../services/htppRequest";
+
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
   try {
     const response = await httpsRequest.get("/users");
@@ -11,14 +13,17 @@ export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
 
 export const editUser = createAsyncThunk(
   "users/updateUser",
-  async ({ id, updatedUser }) => {
-    const response = await httpsRequest.patch(`/users/${id}`, updatedUser);
+  async (updatedUser) => {
+    const response = await httpsRequest.patch(
+      `/users/${updatedUser.id}`,
+      updatedUser
+    );
     return response.data;
   }
 );
 
 export const deleteUser = createAsyncThunk("users/deleteUser", async (id) => {
-  const response = await httpsRequest.delete(`/usres/${id}`);
+  const response = await httpsRequest.delete(`/users/${id}`);
   return id;
 });
 

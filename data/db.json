@@ -1,10 +1,6 @@
 {
   "users": [
     {
-      "name": "erfan mazidabadi",
-      "id": "1"
-    },
-    {
       "name": "mahdi keshavarz",
       "id": "2"
     },
@@ -17,12 +13,8 @@
       "id": "4"
     },
     {
-      "name": "maryam hashemi",
+      "name": "maryam hashemi2",
       "id": "5"
-    },
-    {
-      "id": "765a14ed-93ed-4ee3-baaf-047127dbb252",
-      "name": "pouria asrzad"
     }
   ]
 }
